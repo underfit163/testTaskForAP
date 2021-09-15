@@ -102,11 +102,15 @@ INSERT INTO BookWriters VALUES (default, 5, 2);
 INSERT INTO BookWriters VALUES (default, 6, 3);
 INSERT INTO BookWriters VALUES (default, 7, 2);
 ```
+
+## Задание 2
 2. Напишите SQL-запрос, который бы возвращал самого популярного автора за год. Запрос должен основываться на модели данных, которую вы описали в задании 1.
 ```sql
 Select auth.nameAuthor from TakeBook as tb join Book as b on tb.idBook = b.idBook join BookWriters as bw 
 on bw.idBook = b.idBook join Author as auth on auth.idAuthor = bw.idAuthor group by date_part('year', tb.dateTake), auth.idAuthor order by count(tb.idBook) desc limit 1
 ```
+
+## Задание 3
 3. Определите понятие «злостный читатель».  Предложите алгоритм для поиска самого злостного читателя библиотеки. На любом языке программирования опишите алгоритм поиска такого читателя. Алгоритм должен основываться на модели данных, которую вы описали в задании 1.
 ```java
 import java.io.IOException;
